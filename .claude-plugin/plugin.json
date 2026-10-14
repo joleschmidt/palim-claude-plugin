@@ -1,0 +1,28 @@
+{
+  "name": "palim",
+  "displayName": "Palim",
+  "version": "1.0.0",
+  "description": "Hands your working state to the next AI session. A new chat starts where the last one stopped, with open items and decisions intact, across Claude Code, claude.ai, Cursor and ChatGPT.",
+  "author": {
+    "name": "Jan Ole Schmidt",
+    "email": "hello@usepalim.com",
+    "url": "https://usepalim.com"
+  },
+  "homepage": "https://usepalim.com",
+  "repository": "https://github.com/joleschmidt/palim-claude-plugin",
+  "license": "MIT",
+  "keywords": ["handoff", "context", "session", "checkpoint", "memory", "palim"],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://www.usepalim.com/en/docs/",
+  "supportUrl": "https://www.usepalim.com/en/docs/troubleshooting/",
+  "privacyPolicyUrl": "https://www.usepalim.com/en/privacy/",
+  "termsOfServiceUrl": "https://www.usepalim.com/en/terms/",
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "Palim API key (optional)",
+      "description": "Only the session hooks in Claude Code need it. Create one at https://api.usepalim.com/setup; it starts with palim_. Leave empty to use the connector and skills alone.",
+      "sensitive": true
+    }
+  }
+}
