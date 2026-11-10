@@ -12,7 +12,7 @@ never claim something was saved when the tool call failed or the connector is no
 ## At the start of a chat
 
 1. Call `palim_resume` with no arguments, before answering, unless the last thread is already
-   in your context (in Claude Code the plugin's session hook puts it there).
+   in your context (in Claude Code the `palim-hooks` plugin puts it there at session start).
 2. If the thread fits the user's first message, continue from it without asking them to recap.
    If it does not fit, ignore it and do not mention it.
 3. For a substantial project, call `palim_get_brain` with no arguments to get the distilled

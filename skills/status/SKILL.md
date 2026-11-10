@@ -1,13 +1,9 @@
 ---
 name: status
-description: Check whether Palim is working in this client. Use when the user asks if Palim is connected or working, why nothing was resumed or saved, how to set up the Palim API key, or wants to see the last checkpoint.
+description: Check whether Palim is working in this client. Use when the user asks if Palim is connected or working, or why nothing was resumed or saved.
 ---
 
 # Palim status
-
-Palim has two parts, and they fail separately. Check both and report each on its own line.
-
-## 1. The connector
 
 Call `palim_resume` with no arguments.
 
@@ -17,21 +13,7 @@ Call `palim_resume` with no arguments.
   Code the user runs `/mcp`, selects `palim` and authenticates. On claude.ai and in Cowork they
   connect it on the plugin's **Connectors** tab.
 
-## 2. The session hooks (Claude Code only)
-
-The hooks load the last thread when a session starts and keep a checkpoint current while the
-user works. They fail silently on purpose, so this is the only way to see what they did.
-
-Run this and show its output unchanged:
-
-```bash
-python3 "${CLAUDE_PLUGIN_ROOT}/hooks/palim-status.py"
-```
-
-The last line, `Result:`, says what to do. The usual case is a missing API key: the hooks cannot
-use the connector's sign-in and need their own key. The user creates one at
-https://api.usepalim.com/setup and enters it under `/plugin` > Palim > Configure. Do not ask
-them to paste the key into the chat.
-
-If there is no shell in this client, skip this part and say that the hooks only run in
-Claude Code.
+If the user expected the last thread to be loaded automatically at the start of a Claude Code
+session, that is the separate `palim-hooks` plugin. It is installed with
+`claude plugin marketplace add joleschmidt/palim-mcp-examples` and
+`claude plugin install palim-hooks@palim`, and has its own `/palim-hooks:status`.
