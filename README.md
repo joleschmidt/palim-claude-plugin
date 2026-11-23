@@ -23,20 +23,25 @@ a checkpoint current without a tool call. They are a separate plugin, `palim-hoo
 
 You need a Palim account. Create one at [api.usepalim.com/setup](https://api.usepalim.com/setup).
 
-1. **Install the plugin.** From Anthropic's directory, add Palim under Customize > Plugins. In
-   Claude Code you can also install it from the Palim marketplace:
+1. **Install the plugin.** In Claude Code, add the Palim marketplace and install the plugin
+   from it:
 
    ```bash
    claude plugin marketplace add joleschmidt/palim-mcp-examples
    claude plugin install palim@palim
    ```
 
+   To load a local checkout of this repository for one session, run
+   `claude --plugin-dir /path/to/palim-claude-plugin`.
+
+   A listing in Anthropic's plugin directory is planned.
+
 2. **Sign in to the connector.** In Claude Code run `/mcp`, select `palim` and authenticate. On
    claude.ai and in Cowork, connect it on the plugin's Connectors tab. Sign-in uses OAuth, so
    there is no key to copy.
 
-If you already connected Palim to Claude Code by hand, you can keep that entry. Claude Code
-connects to the same server only once.
+If you already connected Palim to Claude Code by hand, the plugin's connector points to the
+same server, `https://api.usepalim.com/mcp` (see `.mcp.json`).
 
 ## Use it
 
