@@ -34,8 +34,7 @@ You need a Palim account. Create one at [api.usepalim.com/setup](https://api.use
    To load a local checkout of this repository for one session, run
    `claude --plugin-dir /path/to/palim-claude-plugin`.
 
-   A listing in Anthropic's plugin directory is pending review. Once it is approved, you can
-   also add Palim there under Customize > Plugins.
+   A listing in Anthropic's plugin directory is planned.
 
 2. **Sign in to the connector.** In Claude Code run `/mcp`, select `palim` and authenticate. On
    claude.ai and in Cowork, connect it on the plugin's Connectors tab. Sign-in uses OAuth, so
